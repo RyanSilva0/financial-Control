@@ -11,49 +11,8 @@
       rel="stylesheet"
     />
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            fontFamily: {
-              sans: ["Sora", "sans-serif"],
-            },
-            colors: {
-              bg: "#f4f6f9",
-              surface: "#ffffff",
-              border: "#e8ecf1",
-              text: "#1a1f2e",
-              muted: "#7a8499",
-              accent: "#2563eb",
-              green: "#16a34a",
-              red: "#dc2626",
-              blue: "#2563eb",
-              purple: "#7c3aed",
-            },
-            borderRadius: {
-              lg: "20px",
-              md: "12px",
-              sm: "8px",
-            },
-            boxShadow: {
-              sm: "0 2px 8px rgba(0, 0, 0, 0.06)",
-              md: "0 8px 32px rgba(0, 0, 0, 0.1)",
-            },
-            keyframes: {
-              fadeIn: {
-                from: { opacity: 0, transform: "translateY(6px)" },
-                to: { opacity: 1, transform: "translateY(0)" },
-              },
-            },
-            animation: {
-              fadeIn: "fadeIn 0.22s ease",
-            },
-          },
-        },
-      };
-    </script>
+    <script src="/configTailwind.js"></script>
     <style>
-      /* Resíduo mínimo que o Tailwind não cobre via utilitárias puras */
       *,
       *::before,
       *::after {
@@ -74,13 +33,7 @@
   <body
     class="flex flex-col min-h-[100dvh] font-sans bg-bg text-text [-webkit-font-smoothing:antialiased] m-0 p-0"
   >
-    <script>
-      const usuario = JSON.parse(localStorage.getItem("usuario"));
-
-      if (!usuario) {
-        window.location.href = "login.html";
-      }
-    </script>
+    <script></script>
     <!-- ── Header ─────────────────────────────────────────── -->
     <header
       class="header bg-surface border-b border-border px-6 h-[60px] flex items-center justify-between sticky top-0 z-[100] shadow-sm lg:px-10"
@@ -791,5 +744,10 @@
     </nav>
 
     <script src="sessoesbtn.js"></script>
+    <script src="finance.js"></script>
+    <script type="module">
+      import { protegerPagina } from "./conexao.js";
+      const usuario = protegerPagina(); // redireciona pra login.html se não estiver logado
+    </script>
   </body>
 </html>
