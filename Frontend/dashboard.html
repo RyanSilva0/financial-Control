@@ -505,5 +505,9 @@
         </main>
       </div>
     </div>
+    <script type="module">
+      import { protegerPagina } from "./conexao.js";
+      const usuario = protegerPagina(); // redireciona pra login.html se não estiver logado
+    </script>
   </body>
 </html>
