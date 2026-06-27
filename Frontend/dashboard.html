@@ -1,0 +1,509 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/src/output.css" />
+    <link
+      rel="stylesheet"
+      href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css"
+    />
+    <title>Dashboard - WalletFy</title>
+  </head>
+  <body class="bg-[#f4f6f9] text-gray-800">
+    <div class="flex min-h-screen">
+      <!-- SIDEBAR (desktop/tablet) -->
+      <aside
+        class="hidden md:flex w-20 bg-white border-r border-gray-100 flex-col items-center py-6 justify-between"
+      >
+        <div class="flex flex-col items-center gap-8">
+          <div
+            class="w-10 h-10 rounded-full bg-emerald-50 flex items-center justify-center"
+          >
+            <i class="las la-leaf text-emerald-500 text-2xl"></i>
+          </div>
+
+          <nav class="flex flex-col items-center gap-3">
+            <a
+              href="#"
+              class="w-11 h-11 rounded-xl bg-teal-500 flex items-center justify-center text-white shadow-sm"
+            >
+              <i class="las la-wallet text-xl"></i>
+            </a>
+            <a
+              href="#"
+              class="w-11 h-11 rounded-xl flex items-center justify-center text-gray-400 hover:bg-gray-50 hover:text-gray-600"
+            >
+              <i class="las la-chart-line text-xl"></i>
+            </a>
+            <a
+              href="#"
+              class="w-11 h-11 rounded-xl flex items-center justify-center text-gray-400 hover:bg-gray-50 hover:text-gray-600"
+            >
+              <i class="las la-chart-bar text-xl"></i>
+            </a>
+            <a
+              href="#"
+              class="w-11 h-11 rounded-xl flex items-center justify-center text-gray-400 hover:bg-gray-50 hover:text-gray-600"
+            >
+              <i class="las la-pagelines text-xl"></i>
+            </a>
+            <a
+              href="#"
+              class="w-11 h-11 rounded-xl flex items-center justify-center text-gray-400 hover:bg-gray-50 hover:text-gray-600"
+            >
+              <i class="las la-thumbtack text-xl"></i>
+            </a>
+            <a
+              href="#"
+              class="w-11 h-11 rounded-xl flex items-center justify-center text-gray-400 hover:bg-gray-50 hover:text-gray-600"
+            >
+              <i class="las la-briefcase text-xl"></i>
+            </a>
+            <a
+              href="#"
+              class="w-11 h-11 rounded-xl flex items-center justify-center text-gray-400 hover:bg-gray-50 hover:text-gray-600"
+            >
+              <i class="las la-cog text-xl"></i>
+            </a>
+          </nav>
+        </div>
+
+        <div class="flex flex-col items-center gap-3">
+          <a
+            href="#"
+            class="w-11 h-11 rounded-xl flex items-center justify-center text-gray-400 hover:bg-gray-50 hover:text-gray-600"
+          >
+            <i class="las la-user text-xl"></i>
+          </a>
+          <a
+            href="#"
+            class="w-11 h-11 rounded-xl flex items-center justify-center text-gray-400 hover:bg-gray-50 hover:text-gray-600"
+          >
+            <i class="las la-sign-out-alt text-xl"></i>
+          </a>
+          <button
+            type="button"
+            class="w-8 h-8 rounded-lg border border-gray-200 flex items-center justify-center text-gray-400 hover:bg-gray-50 mt-2"
+          >
+            <i class="las la-angle-double-right text-sm"></i>
+          </button>
+        </div>
+      </aside>
+
+      <!-- BOTTOM NAV (mobile only) -->
+      <nav
+        class="md:hidden fixed bottom-0 inset-x-0 bg-white border-t border-gray-100 flex items-center justify-around py-2 z-50"
+      >
+        <a
+          href="#"
+          class="w-10 h-10 rounded-xl bg-teal-500 flex items-center justify-center text-white"
+        >
+          <i class="las la-wallet text-lg"></i>
+        </a>
+        <a
+          href="#"
+          class="w-10 h-10 rounded-xl flex items-center justify-center text-gray-400"
+        >
+          <i class="las la-chart-line text-lg"></i>
+        </a>
+        <a
+          href="#"
+          class="w-10 h-10 rounded-xl flex items-center justify-center text-gray-400"
+        >
+          <i class="las la-chart-bar text-lg"></i>
+        </a>
+        <a
+          href="#"
+          class="w-10 h-10 rounded-xl flex items-center justify-center text-gray-400"
+        >
+          <i class="las la-briefcase text-lg"></i>
+        </a>
+        <a
+          href="#"
+          class="w-10 h-10 rounded-xl flex items-center justify-center text-gray-400"
+        >
+          <i class="las la-user text-lg"></i>
+        </a>
+      </nav>
+
+      <!-- MAIN -->
+      <div class="flex-1 flex flex-col w-full min-w-0 pb-16 md:pb-0">
+        <!-- HEADER -->
+        <header
+          class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between px-4 sm:px-8 py-4 sm:py-5 bg-white border-b border-gray-100"
+        >
+          <h1 class="text-lg sm:text-xl font-semibold text-gray-800">
+            Dashboard
+          </h1>
+
+          <ul class="flex flex-wrap items-center gap-2 sm:gap-4 sm:justify-end">
+            <li>
+              <div
+                class="border-blue-200 border-2 px-3 sm:px-4 h-9 flex gap-2 items-center rounded-lg cursor-pointer text-sm text-gray-600 hover:bg-blue-50"
+              >
+                <i class="las la-question-circle text-lg"></i>
+                <p class="hidden sm:inline">Suporte</p>
+              </div>
+            </li>
+            <li class="hidden sm:block">
+              <button type="button" class="text-gray-400 hover:text-gray-600">
+                <i class="las la-globe text-xl"></i>
+              </button>
+            </li>
+            <li class="hidden sm:flex">
+              <div class="flex items-center gap-2 text-sm text-gray-600">
+                <span class="text-base">🇧🇷</span>
+                <p>Português</p>
+              </div>
+            </li>
+            <li>
+              <button
+                type="button"
+                class="border-2 border-blue-200 rounded-lg h-9 px-3 flex items-center gap-2 text-sm font-medium text-gray-700 hover:bg-blue-50"
+              >
+                <span
+                  class="w-5 h-5 rounded-full bg-gray-200 flex items-center justify-center text-[10px]"
+                  >US</span
+                >
+                <span>BRL</span>
+                <i class="las la-angle-down text-xs text-gray-400"></i>
+              </button>
+            </li>
+            <li class="w-full sm:w-auto order-last sm:order-none">
+              <div
+                class="flex items-center gap-2 justify-between sm:justify-start"
+              >
+                <button
+                  type="button"
+                  class="w-9 h-9 rounded-lg border border-gray-200 flex items-center justify-center text-gray-400 hover:bg-gray-50 shrink-0"
+                >
+                  <i class="las la-angle-left"></i>
+                </button>
+                <div
+                  class="border-2 border-blue-200 rounded-lg h-9 px-3 sm:px-4 flex items-center gap-2 sm:gap-3 text-sm font-medium text-gray-700 flex-1 sm:flex-none justify-center"
+                >
+                  <span>Maio de 2026</span>
+                  <span
+                    class="bg-emerald-100 text-emerald-600 text-xs font-semibold px-2 py-0.5 rounded-md"
+                    >Atual</span
+                  >
+                </div>
+                <button
+                  type="button"
+                  class="w-9 h-9 rounded-lg border border-gray-200 flex items-center justify-center text-gray-400 hover:bg-gray-50 shrink-0"
+                >
+                  <i class="las la-angle-right"></i>
+                </button>
+              </div>
+            </li>
+          </ul>
+        </header>
+
+        <!-- CONTENT -->
+        <main
+          class="flex-1 p-4 sm:p-6 md:p-8 grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6"
+        >
+          <!-- LEFT COLUMN -->
+          <div class="md:col-span-2 flex flex-col gap-4 sm:gap-6 min-w-0">
+            <!-- Saldo + card vazio -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+              <div
+                class="bg-white rounded-2xl p-5 sm:p-6 shadow-sm flex flex-col justify-between"
+              >
+                <p class="text-gray-400 font-medium">Saldo</p>
+                <div class="flex items-end gap-2 mt-4">
+                  <span class="text-3xl sm:text-4xl font-bold text-gray-900"
+                    >2.145,72</span
+                  >
+                  <span class="text-gray-400 font-medium pb-1">BRL</span>
+                </div>
+                <svg viewBox="0 0 220 60" class="w-full h-14 mt-4">
+                  <polyline
+                    points="10,48 60,44 110,40 160,36 210,14"
+                    fill="none"
+                    stroke="#22c55e"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                  />
+                  <circle cx="10" cy="48" r="4" fill="#22c55e" />
+                  <circle cx="60" cy="44" r="4" fill="#22c55e" />
+                  <circle cx="110" cy="40" r="4" fill="#22c55e" />
+                  <circle cx="210" cy="14" r="5" fill="#22c55e" />
+                </svg>
+              </div>
+
+              <div
+                class="hidden sm:block bg-white rounded-2xl shadow-sm min-h-[180px]"
+              ></div>
+            </div>
+
+            <!-- Entrada / Saida / Investimento -->
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
+              <div class="bg-white rounded-2xl p-5 shadow-sm">
+                <div class="flex items-center gap-2 mb-4">
+                  <span
+                    class="w-7 h-7 rounded-full bg-emerald-500 flex items-center justify-center text-white"
+                  >
+                    <i class="las la-arrow-up text-sm"></i>
+                  </span>
+                  <p class="text-gray-500 font-medium">Entrada</p>
+                </div>
+                <div class="flex items-end gap-1 mb-3">
+                  <span class="text-2xl font-bold text-gray-900">3.000,00</span>
+                  <span class="text-gray-400 text-sm pb-0.5">BRL</span>
+                </div>
+                <svg viewBox="0 0 160 30" class="w-full h-8">
+                  <polyline
+                    points="5,25 45,22 85,20 125,16 155,6"
+                    fill="none"
+                    stroke="#22c55e"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                  <circle cx="5" cy="25" r="3" fill="#22c55e" />
+                  <circle cx="45" cy="22" r="3" fill="#22c55e" />
+                  <circle cx="85" cy="20" r="3" fill="#22c55e" />
+                  <circle cx="125" cy="16" r="3" fill="#22c55e" />
+                </svg>
+              </div>
+
+              <div class="bg-white rounded-2xl p-5 shadow-sm">
+                <div class="flex items-center gap-2 mb-4">
+                  <span
+                    class="w-7 h-7 rounded-full bg-red-500 flex items-center justify-center text-white"
+                  >
+                    <i class="las la-arrow-down text-sm"></i>
+                  </span>
+                  <p class="text-gray-500 font-medium">Saida</p>
+                </div>
+                <div class="flex items-end gap-1 mb-3">
+                  <span class="text-2xl font-bold text-gray-900">2.145,72</span>
+                  <span class="text-gray-400 text-sm pb-0.5">BRL</span>
+                </div>
+                <svg viewBox="0 0 160 30" class="w-full h-8">
+                  <polyline
+                    points="5,8 45,12 85,14 125,16 155,24"
+                    fill="none"
+                    stroke="#ef4444"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                  <circle cx="5" cy="8" r="3" fill="#ef4444" />
+                  <circle cx="45" cy="12" r="3" fill="#ef4444" />
+                  <circle cx="85" cy="14" r="3" fill="#ef4444" />
+                  <circle cx="155" cy="24" r="3" fill="#ef4444" />
+                </svg>
+              </div>
+
+              <div class="bg-white rounded-2xl p-5 shadow-sm">
+                <div class="flex items-center gap-2 mb-4">
+                  <span
+                    class="w-7 h-7 rounded-full bg-blue-500 flex items-center justify-center text-white"
+                  >
+                    <i class="las la-dollar-sign text-sm"></i>
+                  </span>
+                  <p class="text-gray-500 font-medium">Investimento</p>
+                </div>
+                <div class="flex items-end gap-1 mb-3">
+                  <span class="text-2xl font-bold text-gray-900">500,00</span>
+                  <span class="text-gray-400 text-sm pb-0.5">BRL</span>
+                </div>
+                <svg viewBox="0 0 160 30" class="w-full h-8">
+                  <polyline
+                    points="5,24 45,20 85,17 125,14 155,5"
+                    fill="none"
+                    stroke="#3b82f6"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                  <circle cx="5" cy="24" r="3" fill="#3b82f6" />
+                  <circle cx="45" cy="20" r="3" fill="#3b82f6" />
+                  <circle cx="85" cy="17" r="3" fill="#3b82f6" />
+                  <circle cx="155" cy="5" r="3" fill="#3b82f6" />
+                </svg>
+              </div>
+            </div>
+
+            <!-- Movimento do mês -->
+            <div class="bg-white rounded-2xl p-4 sm:p-6 shadow-sm flex-1">
+              <div
+                class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-6"
+              >
+                <p class="text-gray-700 font-semibold">Movimento do mês</p>
+                <div class="flex items-center gap-6 text-sm text-gray-600">
+                  <div class="flex items-center gap-2">
+                    <span class="w-3 h-3 rounded-full bg-emerald-500"></span>
+                    <span>Entrada</span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <span class="w-3 h-3 rounded-full bg-red-500"></span>
+                    <span>Saida</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="flex gap-3 sm:gap-6 overflow-x-auto">
+                <div
+                  class="flex flex-col justify-between text-[10px] sm:text-xs text-gray-400 h-40 sm:h-52 pb-1 pr-1 sm:pr-2 shrink-0"
+                >
+                  <span>R$ - 1000</span>
+                  <span>R$ - 900</span>
+                  <span>R$ - 600</span>
+                  <span>R$ - 500</span>
+                  <span>R$ - 300</span>
+                  <span>R$ - 100</span>
+                  <span>R$ - 0</span>
+                </div>
+                <div
+                  class="flex-1 flex items-end gap-3 sm:gap-6 h-40 sm:h-52 border-l border-b border-gray-100 pl-2 sm:pl-4 min-w-[280px]"
+                >
+                  <div
+                    class="w-8 sm:w-14 rounded-t-md bg-emerald-500"
+                    style="height: 95%"
+                  ></div>
+                  <div
+                    class="w-8 sm:w-14 rounded-t-md bg-red-500"
+                    style="height: 62%"
+                  ></div>
+                  <div
+                    class="w-8 sm:w-14 rounded-t-md bg-red-500"
+                    style="height: 14%"
+                  ></div>
+                  <div
+                    class="w-8 sm:w-14 rounded-t-md bg-red-500"
+                    style="height: 30%"
+                  ></div>
+                  <div
+                    class="w-8 sm:w-14 rounded-t-md bg-emerald-500"
+                    style="height: 78%"
+                  ></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- RIGHT COLUMN -->
+          <div class="md:col-span-1 flex flex-col gap-4 sm:gap-6 min-w-0">
+            <!-- Maiores gastos -->
+            <div class="bg-white rounded-2xl p-5 sm:p-6 shadow-sm flex-1">
+              <p class="text-gray-700 font-semibold mb-6">Maiores gastos</p>
+
+              <div class="flex flex-col gap-5">
+                <div>
+                  <div class="flex items-center justify-between mb-2">
+                    <div class="flex items-center gap-2 text-sm text-gray-600">
+                      <span class="w-2.5 h-2.5 rounded-full bg-blue-500"></span>
+                      <span>Alimentação</span>
+                    </div>
+                    <span class="text-sm text-gray-500">50%</span>
+                  </div>
+                  <div class="h-2 rounded-full bg-gray-100">
+                    <div
+                      class="h-2 rounded-full bg-blue-500"
+                      style="width: 50%"
+                    ></div>
+                  </div>
+                </div>
+
+                <div>
+                  <div class="flex items-center justify-between mb-2">
+                    <div class="flex items-center gap-2 text-sm text-gray-600">
+                      <span
+                        class="w-2.5 h-2.5 rounded-full bg-emerald-500"
+                      ></span>
+                      <span>Transporte</span>
+                    </div>
+                    <span class="text-sm text-gray-500">10%</span>
+                  </div>
+                  <div class="h-2 rounded-full bg-gray-100">
+                    <div
+                      class="h-2 rounded-full bg-emerald-500"
+                      style="width: 10%"
+                    ></div>
+                  </div>
+                </div>
+
+                <div>
+                  <div class="flex items-center justify-between mb-2">
+                    <div class="flex items-center gap-2 text-sm text-gray-600">
+                      <span
+                        class="w-2.5 h-2.5 rounded-full bg-amber-400"
+                      ></span>
+                      <span>Lazer</span>
+                    </div>
+                    <span class="text-sm text-gray-500">40%</span>
+                  </div>
+                  <div class="h-2 rounded-full bg-gray-100">
+                    <div
+                      class="h-2 rounded-full bg-amber-400"
+                      style="width: 40%"
+                    ></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Gastos do cartão -->
+            <div class="bg-white rounded-2xl p-5 sm:p-6 shadow-sm">
+              <div class="flex items-center justify-between mb-5">
+                <p class="text-gray-700 font-semibold">Gastos do cartão</p>
+                <a
+                  href="#"
+                  class="text-teal-500 text-sm font-medium flex items-center gap-1"
+                >
+                  Ver todos <i class="las la-angle-right text-xs"></i>
+                </a>
+              </div>
+
+              <div class="flex items-center justify-between text-sm mb-2">
+                <span class="text-gray-500">Meta de gastos</span>
+                <span class="text-gray-700 font-medium">0%</span>
+              </div>
+              <div class="h-2 rounded-full bg-gray-200 mb-2">
+                <div
+                  class="h-2 rounded-full bg-gray-400"
+                  style="width: 0%"
+                ></div>
+              </div>
+              <div
+                class="flex items-center justify-between text-xs text-gray-400 mb-5"
+              >
+                <span>0 BRL / 300 BRL</span>
+                <span>3 gastos totais</span>
+              </div>
+
+              <div class="grid grid-cols-4 text-xs text-gray-400 mb-3">
+                <span>Movimento</span>
+                <span>Valor</span>
+                <span class="hidden sm:inline">Estado</span>
+                <span class="text-right">Ação</span>
+              </div>
+
+              <div class="grid grid-cols-4 items-center text-sm">
+                <div class="flex items-center gap-2 min-w-0">
+                  <span
+                    class="w-7 h-7 rounded-full bg-red-100 flex items-center justify-center text-red-500 shrink-0"
+                  >
+                    <i class="las la-arrow-down text-xs"></i>
+                  </span>
+                  <div class="min-w-0">
+                    <p class="text-gray-700 font-medium leading-tight truncate">
+                      TotalPass
+                    </p>
+                    <p class="text-gray-400 text-xs leading-tight">4/5/2026</p>
+                  </div>
+                </div>
+                <span class="text-red-500 font-medium">BRL - 89,90</span>
+                <span class="hidden sm:inline"></span>
+                <span class="flex justify-end">
+                  <i class="las la-clock text-amber-400"></i>
+                </span>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>
