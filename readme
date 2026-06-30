@@ -32,141 +32,46 @@ Azul
 
 ## Tecnologias
 
-### Front-end
-
-- HTML5
-- Tailwind CSS
-- JavaScript
-
-### Back-end
-
-_(a definir conforme stack escolhida — ex: Node.js + Express, Laravel, Django)_
-
-### Banco de Dados
-
-_(a definir — ex: PostgreSQL, MySQL, SQLite)_
-
----
+Node.js
+HTML5
+CSS
+Tailwindcss
+MongoDB
+Javascript
+Trello
+e muito Spotify
 
 ## Estrutura do Projeto
 
 ```
-ControleFinanceiro/
-├── src/
-│   ├── assets/
-│   ├── components/
-│   ├── pages/
-│   │   ├── login.html
-│   │   ├── register.html
-│   │   └── dashboard.html
-│   └── output.css
 ├── backend/
-│   ├── routes/
-│   ├── controllers/
-│   ├── models/
-│   └── database/
-├── index.html
-└── README.md
+│ ├───controllers/
+│ ├───models/
+│   ├───User.js
+│   ├───wallet.js
+│ ├───routes/
+│   ├───User.js
+│   ├───wallet.js
+│ ├───server.js
+│ ├───db.js
+│ ├───vercel.json
+├── FrontEnd/
+│ ├───conexao.js
+│ ├───index.html
+│ ├───login.html
+│ ├───sessoesbtn.js
+├── Node_Module/
+├── src/
+│ ├───assets/
+│   ├───carteira.png
+│   ├───Logo_WalletFy.png
+│   ├───Logo_WalletFy_Escuro.png
+│ ├───components/
+│ ├───input.css
+│ ├───output.css
+├── .env
+├── .gitignore
+├── package-lock.json/
+├── package.json/
+├── readme.md
 ```
-
----
-
-## Como Rodar o Projeto
-
-### Pré-requisitos
-
-- Node.js >= 18 _(ou a runtime do seu back-end)_
-- Banco de dados configurado
-
-### Instalação
-
-
-
-### Configuração do Banco de Dados
-
-1. Crie um banco de dados com o nome `WalletFy`
-2. Copie o arquivo de variáveis de ambiente:
-
-```bash
-cp .env.example .env
-```
-
-3. Preencha as variáveis no `.env`:
-
-
-4. Execute as migrations:
-
-```bash
-npm run migrate
-```
-
-### Rodando a aplicação
-
-```bash
-npm run dev
-```
-
-Acesse em: `http://localhost:3000`
-
----
-
-## Modelo de Dados
-
-### Tabela `users`
-
-| Campo      | Tipo      | Descrição           |
-| ---------- | --------- | ------------------- |
-| id         | UUID      | Identificador único |
-| name       | VARCHAR   | Nome do usuário     |
-| email      | VARCHAR   | E-mail (único)      |
-| password   | VARCHAR   | Senha criptografada |
-| created_at | TIMESTAMP | Data de criação     |
-
-### Tabela `transactions`
-
-| Campo       | Tipo      | Descrição                                   |
-| ----------- | --------- | ------------------------------------------- |
-| id          | UUID      | Identificador único                         |
-| user_id     | UUID      | Referência ao usuário                       |
-| type        | ENUM      | `entrada`, `saida`, `investimento`, `outro` |
-| description | VARCHAR   | Descrição da movimentação                   |
-| amount      | DECIMAL   | Valor da transação                          |
-| date        | DATE      | Data da movimentação                        |
-| created_at  | TIMESTAMP | Data de criação                             |
-
----
-
-## Autenticação
-
-A autenticação é feita via **JWT (JSON Web Token)**. Após o login, o token é armazenado no cliente e enviado no header de cada requisição autenticada:
-
-```
-Authorization: Bearer <token>
-```
-
----
-
-## Roadmap
-
-- [x] Layout base da navbar
-- [ ] Tela de login e cadastro
-- [ ] Integração com banco de dados
-- [ ] CRUD de transações
-- [ ] Dashboard mensal com totais
-- [ ] Filtros por categoria
-- [ ] Gráficos de resumo mensal
-- [ ] Exportar relatório em PDF
-
----
-
-## Contribuindo
-
-1. Faça um fork do projeto
-2. Crie uma branch para sua feature (`git checkout -b feature/minha-feature`)
-3. Commit suas alterações (`git commit -m 'feat: minha nova feature'`)
-4. Push para a branch (`git push origin feature/minha-feature`)
-5. Abra um Pull Request
-
----
-
-> Feito com para ter controle total das suas finanças.
