@@ -1,11 +1,23 @@
 {
   "name": "ControleFinanceiro",
   "version": "1.0.0",
+  "type": "module",
   "scripts": {
-    "dev": "tailwindcss -i ./src/input.css -o ./src/output.css --watch"
+    "dev": "tailwindcss -i ./src/input.css -o ./src/output.css --watch",
+    "build": "tailwindcss -i ./src/input.css -o ./src/output.css",
+    "start": "node backend/server.js"
   },
   "dependencies": {
     "@tailwindcss/cli": "^4.3.0",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "mongodb": "^7.3.0",
+    "mongoose": "^9.7.0",
     "tailwindcss": "^4.3.0"
+  },
+  "allowScripts": {
+    "@parcel/watcher@2.5.6": true
   }
 }
+
