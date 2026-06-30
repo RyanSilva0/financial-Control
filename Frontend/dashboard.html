@@ -17,11 +17,9 @@
         class="hidden md:flex w-20 bg-white border-r border-gray-100 flex-col items-center py-6 justify-between"
       >
         <div class="flex flex-col items-center gap-8">
-          <div
-            class="w-10 h-10 rounded-full bg-emerald-50 flex items-center justify-center"
-          >
-            <i class="las la-leaf text-emerald-500 text-2xl"></i>
-          </div>
+          
+            <img class=" w-15 relative bottom-3" src="/src/assets/FundoWalletFYBranco.png"></img>
+         
 
           <nav class="flex flex-col items-center gap-3">
             <a
@@ -146,17 +144,14 @@
                 <p class="hidden sm:inline">Suporte</p>
               </div>
             </li>
+
+            <!--Botao de mudar linguagem, aparece uma lista de linguas com o icone de cada pais-->
             <li class="hidden sm:block">
-              <button type="button" class="text-gray-400 hover:text-gray-600">
+              <button type="button" class="border-2 border-blue-200 rounded-lg h-9 px-3 flex items-center gap-2 text-sm font-medium text-gray-700 hover:bg-blue-50">
                 <i class="las la-globe text-xl"></i>
               </button>
             </li>
-            <li class="hidden sm:flex">
-              <div class="flex items-center gap-2 text-sm text-gray-600">
-                <span class="text-base">🇧🇷</span>
-                <p>Português</p>
-              </div>
-            </li>
+            
             <li>
               <button
                 type="button"
@@ -175,7 +170,9 @@
                 class="flex items-center gap-2 justify-between sm:justify-start"
               >
                 <button
+                  id="retrocederMes"
                   type="button"
+                  onclick="retroceder()"
                   class="w-9 h-9 rounded-lg border border-gray-200 flex items-center justify-center text-gray-400 hover:bg-gray-50 shrink-0"
                 >
                   <i class="las la-angle-left"></i>
@@ -183,14 +180,16 @@
                 <div
                   class="border-2 border-blue-200 rounded-lg h-9 px-3 sm:px-4 flex items-center gap-2 sm:gap-3 text-sm font-medium text-gray-700 flex-1 sm:flex-none justify-center"
                 >
-                  <span>Maio de 2026</span>
+                  <span id="nomeMes"></span>
                   <span
                     class="bg-emerald-100 text-emerald-600 text-xs font-semibold px-2 py-0.5 rounded-md"
                     >Atual</span
                   >
                 </div>
                 <button
+                  id="avancarMes"
                   type="button"
+                  onclick="avancar()"
                   class="w-9 h-9 rounded-lg border border-gray-200 flex items-center justify-center text-gray-400 hover:bg-gray-50 shrink-0"
                 >
                   <i class="las la-angle-right"></i>
@@ -505,9 +504,11 @@
         </main>
       </div>
     </div>
-    <script type="module">
-      import { protegerPagina } from "./conexao.js";
-      const usuario = protegerPagina(); // redireciona pra login.html se não estiver logado
+    <script src="/scripts/dashboardconfig.js"></script>
+
+<script type="module">
+import { protegerPagina } from "/scripts/conexao.js";
+      const usuario = protegerPagina();
     </script>
   </body>
 </html>

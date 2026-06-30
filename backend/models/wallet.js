@@ -6,7 +6,7 @@ const walletSchema = new mongoose.Schema(
       type: String,
       required: true,
       trim: true,
-      maxlength: 30,
+      maxlength: 50,
     },
 
     valor: {
@@ -33,7 +33,6 @@ const walletSchema = new mongoose.Schema(
     },
     parcela: {
       type: number,
-      required: true,
     },
   },
   {
